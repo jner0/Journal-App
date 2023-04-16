@@ -97,7 +97,7 @@ export const RegisterPage = () => {
             />
           </Grid>
 
-          <Grid container spacing={2} sx={{ mb: 2, m: 1 }}>
+          <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
             <Grid 
               item 
               xs={12}
