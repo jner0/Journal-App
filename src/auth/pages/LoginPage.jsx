@@ -10,14 +10,16 @@ import {
   startLoginWithEmailPassword,
 } from "../../store/auth/thunks";
 
+const formData = {
+  email: "",
+  password: "",
+}
+
 export const LoginPage = () => {
   const { status, errorMessage } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
-  const { email, password, onInputChange } = useForm({
-    email: "",
-    password: "",
-  });
+  const { email, password, onInputChange } = useForm( formData );
 
   const isAuthenticating = useMemo(() => status === "checking", [status]);
 
@@ -45,7 +47,7 @@ export const LoginPage = () => {
               type="email"
               placeholder="correo@gmail.com"
               fullWidth
-              name="email"s
+              name="email"
               value={email}
               onChange={onInputChange}
             />
