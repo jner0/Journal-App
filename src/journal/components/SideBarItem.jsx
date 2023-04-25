@@ -4,7 +4,7 @@ import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui
 import React, { useMemo } from 'react'
 import { setActiveNote } from '../../store/journal'
 
-export const SideBarItem = ({title, body, id, date, imageUrls}) => {
+export const SideBarItem = ({title, body, id, date, imageUrls=[]}) => {
 
     const dispatch = useDispatch();
 
