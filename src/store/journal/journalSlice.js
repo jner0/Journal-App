@@ -54,6 +54,13 @@ export const journalSlice = createSlice({
 
        },
 
+       clearNotesLogout: (state) => {
+               state.isSaving = false;
+               state.messageSaved = '';
+               state.notes = [],
+               state.active = null;
+       },
+
        deleteNoteById: (state, action) => {
 
        }
@@ -70,5 +77,6 @@ export const {
     updateNote,
     deleteNoteById,
     savingNewNote,
-    setPhotosToActiveNote
+    setPhotosToActiveNote,
+    clearNotesLogout
  } = journalSlice.actions;
