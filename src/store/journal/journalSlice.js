@@ -62,8 +62,10 @@ export const journalSlice = createSlice({
        },
 
        deleteNoteById: (state, action) => {
-
-       }
+               state.active = null;
+               //esta funcion es permitida porque estamos trabajando con redux toolkit
+               state.notes = state.notes.filter( note => note.id !== action.payload);
+       },
     }
 });
 
