@@ -37,7 +37,6 @@ export const LoginPage = () => {
 
   return (
     <AuthLayout title="Login">
-      {" "}
       {/* El AuthLayout funciona para todos los elementos que se vana  reutilizar */}
       <form onSubmit={onSubmit} className="animate__animated animate__fadeIn animate__faster">
         <Grid container>
