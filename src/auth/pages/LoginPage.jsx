@@ -95,6 +95,7 @@ export const LoginPage = () => {
                 disabled={isAuthenticating}
                 onClick={onGoogleSignIn}
                 variant="contained"
+                aria-label='google-btn'
                 fullWidth
               >
                 <Google />
