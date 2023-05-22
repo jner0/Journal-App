@@ -4,6 +4,13 @@ import { Provider } from "react-redux"
 import { configureStore } from "@reduxjs/toolkit"
 import { MemoryRouter } from "react-router-dom"
 import { authSlice } from "../../../src/store/auth/authSlice"
+import { startGoogleSignIn } from "../../../src/store/auth/thunks"
+
+const mockStartGoogleSignIn = jest.fn();
+
+jest.mock("../../../src/store/auth/authSlice", () => ({
+    startGoogleSignIn: () => mockStartGoogleSignIn
+}))
 
 const store  = configureStore({
     reducer: {
@@ -42,6 +49,7 @@ describe('Pruebas en el LoginPage', () => {
 
         const googleBtn = screen.getByLabelText('google-btn');
         fireEvent.click( googleBtn );
+        expect(mockStartGoogleSignIn).toHaveBeenCalledWith();
 
     })
 
